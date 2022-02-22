@@ -1,0 +1,16 @@
+# Mermaid Diagram Examples
+
+## Flowchart
+
+```mermaid
+graph TB; 
+    t1(Start) --> q1{Does kettle have water?}
+    q1 -- Yes --> t4(Turn on kettle) --> t5
+    q1 -- No --> t3(Fill kettle) --> t4
+    t5(Fetch mug and tea bag) --> t7(Place tea bag in mug) --> q2
+    q2(Has kettle boiled?) -- Yes --> t8(Pour water over tea bag)
+    q2 -- No --> t9(Wait for kettle to boil) --> q2
+```
+
+## Sequence Diagram
+

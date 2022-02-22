@@ -1,18 +1,18 @@
-﻿namespace Lexacom.Autofac
+﻿using System.Threading.Tasks;
+
+namespace Lexacom.Autofac
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
-            // Basic registration principles
-            TestHarness.BasicRegistration(); 
-
-            // Advanced registration methods (assembly scanning)
-            
-
-            // Logical grouping of registrations w. modules + configuration
-
-            // Advanced registrations (named, keyed, managing scope)
+            //TestHarness.BasicRegistration();
+            //TestHarness.AdvancedRegistration();
+            //TestHarness.AssemblyScanningI();
+            //await TestHarness.AssemblyScanningII();
+            //TestHarness.ModuleRegistration();
+            //await TestHarness.ScopeManagementI();
+            await TestHarness.ScopeManagementII();
         }
     }
 }

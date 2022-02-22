@@ -1,4 +1,4 @@
-namespace Lexacom.Autofac
+namespace Lexacom.Autofac.Targets
 {
     public interface ITarget
     {

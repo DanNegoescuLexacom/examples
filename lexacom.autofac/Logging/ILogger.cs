@@ -1,4 +1,4 @@
-namespace Lexacom.Autofac
+namespace Lexacom.Autofac.Logging
 {
     public interface ILogger
     {

@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Lexacom.Autofac.Targets;
 
-namespace Lexacom.Autofac
+namespace Lexacom.Autofac.Logging
 {
     internal class Logger : ILogger
     {
