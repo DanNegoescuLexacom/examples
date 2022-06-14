@@ -17,7 +17,6 @@ namespace Lexacom.Autofac
             _logger.Log(LogLevel.Info, "We're doing something...");
             _logger.Log(LogLevel.Warn, "Uh oh. It's going wrong...");
             _logger.Log(LogLevel.Error, "There was an error!");
-            Console.ReadKey();
         }
     }
 }

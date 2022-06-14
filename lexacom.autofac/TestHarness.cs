@@ -45,7 +45,7 @@ namespace Lexacom.Autofac
             cb.Register(c => new ConsoleTarget()).As<ITarget>();
 
             // Last registration always wins (FileTarget overrides ConsoleTarget)
-            //cb.Register(C => new FileTarget(@"d:\scratch\log.txt")).As<ITarget>()
+            //cb.Register(C => new FileTarget(@"d:\scratch\log.txt")).As<ITarget>();
 
             // unless we preserve existing defaults...
             cb.Register(C => new FileTarget(@"d:\scratch\log.txt")).As<ITarget>().PreserveExistingDefaults();
@@ -75,14 +75,14 @@ namespace Lexacom.Autofac
             cb.Register(c => new TestEntrypoint(c.Resolve<ILogger>()));
 
             //register all ITargets in the current assembly
-            cb.RegisterAssemblyTypes(typeof(ITarget).Assembly)
-                .Where(t => t.IsAssignableTo<ITarget>())
-                .AsImplementedInterfaces();
+            //cb.RegisterAssemblyTypes(typeof(ITarget).Assembly)
+            //    .Where(t => t.IsAssignableTo<ITarget>())
+            //    .AsImplementedInterfaces();
 
             // register all ITarget types except FileTarget (supplying custom parameters)
-            //cb.RegisterAssemblyTypes(typeof(ITarget).Assembly)
-            //    .Except<FileTarget>(e => e.WithParameter(new TypedParameter(typeof(string), @"d:\scratch\log.txt")))
-            //    .AsImplementedInterfaces();
+            cb.RegisterAssemblyTypes(typeof(ITarget).Assembly)
+                .Except<FileTarget>(e => e.WithParameter(new TypedParameter(typeof(string), @"d:\scratch\log.txt")))
+                .AsImplementedInterfaces();
 
             using var container = cb.Build();
             using var scope = container.BeginLifetimeScope();
