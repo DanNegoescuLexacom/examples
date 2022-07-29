@@ -7,7 +7,6 @@ using Lexacom.Autofac.Generics;
 using Lexacom.Autofac.Logging;
 using Lexacom.Autofac.Modules;
 using Lexacom.Autofac.Targets;
-using Microsoft.Extensions.Configuration;
 using Lexacom.Autofac.Scopes;
 using System.Diagnostics;
 
@@ -137,10 +136,10 @@ namespace Lexacom.Autofac
             var settings = new TargetsModuleSettings { FilePath = @"d:\scratch\log.txt" };
             
             // Or can use IConfiguration to get settings from appsettings.json
-            var configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .Build();
-            cb.RegisterModule(TargetsModule.FromConfiguration(configuration));
+            //var configuration = new ConfigurationBuilder()
+            //    .AddJsonFile("appsettings.json")
+            //    .Build();
+            //cb.RegisterModule(TargetsModule.FromConfiguration(configuration));
 
             using var container = cb.Build();
             using var scope = container.BeginLifetimeScope();

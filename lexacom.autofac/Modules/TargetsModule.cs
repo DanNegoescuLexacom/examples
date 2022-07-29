@@ -1,6 +1,5 @@
 using Autofac;
 using Lexacom.Autofac.Targets;
-using Microsoft.Extensions.Configuration;
 
 namespace Lexacom.Autofac.Modules
 {
@@ -20,9 +19,11 @@ namespace Lexacom.Autofac.Modules
             base.Load(builder);
         }
 
+/*
         public static TargetsModule FromConfiguration(IConfiguration configuration)
         {
             return new TargetsModule(TargetsModuleSettings.FromConfiguration(configuration));
         }
+*/
     }
 }
